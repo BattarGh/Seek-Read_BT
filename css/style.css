@@ -1,0 +1,539 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  --text-primary:#E4E2EA;
+  --text-secondary:#1B1734;
+  --highlight: #ecdfed;
+  --bg-primary: #23232e;
+  --bg-secondary: #E43D40;
+  --whole-background:#282836;
+  --transition-speed: 600ms;
+  --bookstore-img-height:400px;
+  --bookstore-img-width:262.84px;
+
+}
+
+
+
+
+/*------------------body------------------*/
+
+body {
+  color: white;
+  background-color: #9c00a;
+  margin: 0;
+  padding: 0;
+}
+
+/* changing the color of the scrollbar and the track to purpple*/
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+
+body::-webkit-scrollbar-track {
+  background: #420264;
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background: #E4E2EA;
+}
+
+/*-------------------Header---------------------*/
+/*using flex box to orgnize the header */
+header{display:flex;
+  margin: -1rem;
+  width: auto;
+  height:4.5rem;
+  background-color: #420264;
+  border-radius:3px;
+}
+
+/*the text in the header*/
+.header-logo{
+  color: aliceblue;
+  padding-left: 1rem;
+  text-decoration: none;
+  transition: var(--transition-speed);
+
+}
+
+/*------------------Section------------------*/
+/*Home page image container + image*/
+.img-container{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  padding:0;
+}
+
+.picture{
+  border-radius: 4px;
+  height: 600px;
+  width: 1650px;
+}
+/*------------------Article------------------*/
+/*text written in the picture*/
+.text-container {
+  color: antiquewhite;
+  position: absolute;
+  filter: opacity(50%); /* make the text less appearent*/
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size:20px;
+  text-shadow: -5px 6px 7px #000000;
+  transition:var(--transition-speed);
+  filter:(1px);
+}
+  /* when hovering over the image the text expands and becomes more appearent*/
+  .img-container:hover .text-container{
+   font-size:50px;
+   filter:opacity(100%);
+     margin-right:700px;
+ }
+ /* displayed books in home*/
+ .book-container {
+    display:flex;
+    justify-content: space-around;
+
+ }
+ .book-container div{
+    box-shadow: 2px 2px 10px black;
+ }
+ .book{
+   height:595px;
+ }
+
+ .arrival-container{
+    justify-content:center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg-secondary);
+    border-radius:20px;
+    width:70rem;
+ }
+
+ .arrival{
+   color:white;
+   font-family:Helvetica, Arial, Sans-Serif;
+  transition:var(--transition-speed);
+   font-size:50px;
+   margin-left: 32%;
+   margin-top:50px;
+   margin-bottom: 80px;
+ }
+
+
+
+/* when hovering over a book it grows*/
+ .book-img{
+   transition: ease var(--transition-speed);
+ }
+ .book-img:hover{
+   transform: scale(1.1);
+ }
+
+
+ /*-----------------Footer------------------*/
+ footer{
+   background-color:#E43D40;
+   width: 100%;
+   display:flex;
+   justify-content: space-around;
+   height: 100%;
+
+
+ }
+.footer-container{
+  display:flex;
+  text-align: center;
+  color: white;
+}
+.footer-list{
+  display:flex;
+  flex-direction:column;
+  text-align: left;
+  list-style-type: none;
+  margin-right: 100px;
+
+}
+
+
+/* moving all the website's content by 5 rem so the nav bar could be fitted there*/
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+
+}
+
+
+
+/*------------------Navigation_Bar------------------{*/
+/* the structure for the navigation bar*/
+.navbar{
+  background-color: #420264;
+  position:fixed;
+  z-index: 2;
+  display: flex;
+  width: 5rem;
+  height: 100%;
+  transition:var(--transition-speed)
+
+ }
+ /*nav bar header text is bold*/
+ .logo {
+   font-weight: bold;
+   background:#420264;
+   transition: var(--transition-speed);
+
+ }
+ .logo:hover .logo-text,.logo-icon {
+   color: #E4E2EA;
+ }
+
+/*list containing all the links to differnt parts of the
+wbesite*/
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+}
+/*text is hidden*/
+.link-text {
+  display: none;
+  color: #E4E2EA;
+  filter: opacity(0);
+  margin-left: 1rem;
+}
+/*customizing the link part of the list*/
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+/* customizing the icon next the home button*/
+.nav-link i {
+    font-size: 54px;
+    min-width: 2rem;
+    margin: 1rem;
+}
+/* when hovering on the items they glow and get a dark bacgkround*/
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background:#E43D40;
+  color: white;
+}
+
+/* the last item goes all the way to the bottom*/
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-item{
+  width:100%;
+  margin:0.5rem;
+  transition: var(--transition-speed);
+}
+.nav-item:first-child{
+  margin:0;
+  border-bottom-right-radius: 12px
+}
+
+.nav-item:hover{
+  background-color:#141418;
+}
+
+.navbar:hover{
+  width: 14rem;
+}
+
+.navbar:hover .link-text{
+  display: inline;
+    filter: opacity(1);
+}
+
+/*------------------Feedback Page------------------*/
+/*organizing the feedback items as a flex box and they are orderd in a column structure*/
+.container{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   padding-bottom:20rem ;
+   padding-top:10rem;
+   padding-right:15rem;
+}
+.container h1{
+  color:#420264;
+}
+.feedback-container{
+   background-color:#420264;
+   box-shadow: 1px 1px 7px black;
+   border-radius:10px;
+   padding-top: 1rem;
+   padding-right:7rem;
+
+}
+.feedback-item{
+   color: white;
+   padding-right: 100px;
+   margin-left: 30px;
+   margin-top: 0.5rem;
+   border: 0.5px;
+   margin-bottom:1rem;
+   background:none;
+   border-bottom: 10px;
+}
+select option {
+    margin: 40px;
+    background: var(--bg-primary);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+label{
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+.message-textfield{
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  margin-left: 30px;
+  border-radius: 10px;
+  border: 0.5px;
+  padding-bottom: 10rem;
+  padding-right: 8rem;
+}
+.submit-button{
+  box-shadow: 1px 1px 10px black;
+  border-radius: 10px;
+  border: 0.5px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-top: 20px;
+  margin-left: 9rem;
+  margin-bottom:10px;
+  color:var(--text-secondary);
+  background-color: var(--highlight);
+
+}
+
+/*------------------BookStore------------------*/
+.bookstore-container {
+  position: relative;
+   display:flex;
+   padding: 10px;
+   justify-content: space-around;
+
+}
+/* books category customizing*/
+.book-cat-head{
+  font-size:30px;
+  color:var(--text-primary);
+  background-color:var(--bg-secondary);
+  padding-left: 45%;
+  border-radius:5px;
+}
+.bookstore-img  {
+  transition: ease var(--transition-speed);
+  transition-duration:1s;
+  height:var(--bookstore-img-height);
+  width: var(--bookstore-img-width);
+
+}
+
+.bookstore-img:hover {
+  filter: (1.6px);
+  position:relative;
+  transform: scale(1.1);
+
+}
+
+
+/*------------------Buttons------------------*/
+/* positiong the buttons*/
+  .hidden-button{
+  position: absolute;
+  left:8.8rem;
+  bottom:-2rem;
+}
+
+.hidden-button-2{
+
+  position: absolute;
+  left:27.2rem;
+  bottom:-2rem;
+
+}
+
+.hidden-button-3{
+  position: absolute;
+  left:46rem;
+  bottom:-2rem;
+
+}
+
+.hidden-button-4{
+
+  position: absolute;
+  left:64rem;
+  bottom:-2rem;
+
+}
+
+.hidden-button-5{
+
+  position: absolute;
+  left:82.8rem;
+  bottom:-2rem;
+
+}
+
+
+.hidden-button-6{
+
+  position: absolute;
+  left:101.7rem;
+  bottom:-2rem;
+
+}
+/* customizing buttons */
+.hidden-button,.hidden-button-2,.hidden-button-3,.hidden-button-4,.hidden-button-5,.hidden-button-6{
+  color:var(--bg-secondary);
+  background-color: var(--highlight);
+  transition: ease var(--transition-speed);
+  text-decoration:none;
+  visibility: hidden;
+  filter:opacity(0);
+  border-radius:4px;
+  border: 0px;
+  box-shadow: 1px 1px 10px black;
+}
+
+/*removing the underline from all the buttons*/
+.hidden-button:visited,.hidden-button-2:visited,.hidden-button-3:visited,
+.hidden-button-4:visited,.hidden-button-5:visited,.hidden-button-6:visited{
+ color:var(--text-primary);
+  text-decoration: none;
+}
+
+/* animation for the buttons when hovring on a book*/
+.bookstore-book:hover .hidden-button,.bookstore-book-2:hover .hidden-button-2 ,.bookstore-book-3:hover .hidden-button-3
+,.bookstore-book-4:hover .hidden-button-4 ,.bookstore-book-5:hover .hidden-button-5 ,.bookstore-book-6:hover .hidden-button-6
+{
+  bottom:2rem;
+  margin-left:-4rem;
+  padding-left:4rem;
+  padding-right:4rem;
+  visibility: visible;
+  filter:opacity(1);
+}
+
+
+
+/*------------------Buttons------------------*/
+/*------------------PRICE------------------*/
+/*animation for the price tags*/
+.bookstore-book:hover .price , .bookstore-book-2:hover .price-2 ,.bookstore-book-3:hover .price-3
+,.bookstore-book-4:hover .price-4 ,.bookstore-book-5:hover .price-5 ,.bookstore-book-6:hover .price-6{
+  padding-left: 5rem;
+  margin-left:  -5rem;
+  padding-right: 5rem;
+  border-radius:4px;
+  filter:opacity(1);
+  visibility: visible
+}
+
+/*customizing the price tags*/
+.price,.price-2,.price-3,.price-4,.price-5,.price-6{
+  position: absolute;
+  border-radius:5px;
+  background-color:#E43D40;
+  transition:var(--transition-speed);
+  filter:opacity(0);
+    visibility: hidden;
+    box-shadow: 1px 1px 5px black;
+
+}
+.price{
+  left:8.8rem;
+  bottom: 1rem;
+}
+
+.price:hover{
+  padding-left: 7rem;
+  margin-left:  -7rem;
+  padding-right: 7rem;
+}
+.price-2{
+position: absolute;
+left:27.2rem;
+bottom:1rem;
+
+}
+
+.price-3{
+position: absolute;
+left:46rem;
+bottom:1rem;
+
+}
+
+.price-4{
+
+position: absolute;
+left:64rem;
+bottom: 1rem;
+
+}
+
+.price-5{
+
+position: absolute;
+left:82.8rem;
+bottom:1rem;
+
+}
+
+
+.price-6{
+
+position: absolute;
+left:101.7rem;
+bottom:1rem;
+
+}
+/*------------------BookStore------------------*/
+/*------------------about------------------*/
+/*text for the about us page*/
+.about-container{
+  font-size: 40px;
+  color: var(--text-primary);
+  background-color:#E4E2EA;
+  text-align: center;
+  padding-bottom: 50px;
+
+
+}
+
+.about-container h1{
+  background-color:#E43D40;
+
+  color: #e43d40;
+  font-size:40px;
+}
+/*the plant image sizing*/
+.background-img{
+  height: 350px;
+  width:955px;
+}
+p{
+  color:#420264;
+}
